@@ -1,0 +1,46 @@
+{
+  "functions": {
+    "createTask": {
+      "arguments": {
+        "task": {
+          "$ref": "#/schemas/TaskDto"
+        }
+      },
+      "returns": {
+        "$ref": "#/schemas/Task"
+      },
+      "variables": {},
+      "start": {
+        "$ref": "#/functions/createTask/steps/writeLog"
+      },
+      "steps": {
+        "writeLog": {
+          "type": "log",
+          "next": {
+            "$ref": "#/functions/createTask/steps/createTask"
+          },
+          "arguments": {
+            "message": "Creating new task"
+          }
+        },
+        "createTask": {
+          "type": "dbCreate",
+          "next": {
+            "$ref": "#/functions/createTask/steps/end"
+          },
+          "arguments": {
+            "table": "task",
+            "data": {
+              "name": "task.name",
+              "done": "task.done"
+            }
+          }
+        },
+        "end": {
+          "type": "end",
+          "arguments": {}
+        }
+      }
+    }
+  }
+}
