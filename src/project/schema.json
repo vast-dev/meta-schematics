@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsVastProject",
+  "title": "Vast Project Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "oneOf": [
+        { "type": "string" }
+      ],
+      "description": "The name of the Vast project.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to give the Vast project?"
+    }
+  },
+  "required": ["name"]
+}
