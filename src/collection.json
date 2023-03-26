@@ -3,11 +3,7 @@
   "schematics": {
     "project": {
       "description": "A blank schematic.",
-      "factory": "./project/project.factory#main"
-    },
-    "app": {
-      "description": "A blank schematic.",
-      "factory": "./app/app.factory#main"
+      "factory": "./project/index#project"
     }
   }
 }

@@ -1,0 +1,9 @@
+{
+    "name": "<%= name %>",
+    "apps": {
+      "api": {
+        "name": "API",
+        "description": "A RESTful API"
+      }
+    }
+  }
