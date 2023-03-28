@@ -1,5 +1,5 @@
 {
-  "schemas": {
+  "definitions": {
     "TaskDto": {
       "type": "object",
       "required": ["name"],
@@ -23,7 +23,7 @@
           "example": 10
         },
         "name": { "type": "string", "example": "My first task" },
-        "owner": { "$ref": "#/schemas/User" },
+        "owner": { "$ref": "#/definitions/User" },
         "done": { "type": "boolean", "example": false, "default": false }
       }
     },
